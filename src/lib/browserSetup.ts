@@ -17,7 +17,7 @@ interface browserConfig {
 const defaultBrowserConfig: browserConfig = {
   args: [],
   headless: false,
-  connectOption: { defaultViewport: { width: 1920, height: 1080 } },
+  connectOption: { defaultViewport: { width: 1280, height: 720 } },
   disableXvfb: false,
   ignoreAllFlags: false,
   plugins: [],
@@ -41,7 +41,6 @@ async function setupBrowser(config?: browserConfig) {
           : []),
         "--disable-features=Translate,OptimizationHints,MediaRouter,DialMediaRouteProvider,CalculateNativeWinOcclusion,InterestFeedContentSuggestions,CertificateTransparencyComponentUpdater,AutofillServerCommunication,PrivacySandboxSettings4,AutomationControlled",
         "--no-sandbox",
-        "--start-maximized",
       ],
     ],
     ...(config.customConfig ? config.customConfig : {}),

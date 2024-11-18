@@ -20,7 +20,7 @@ export default class BotVPol extends BotV {
   }
 
   private async stepOne() {
-    await this.page.waitForSelector(".mat-checkbox-input", { visible: true });
+    await this.page.waitForSelector(".mat-checkbox-input", { visible: true, timeout: 60000 });
 
     await this.page.evaluate(() => {
       const checkboxes = document.querySelectorAll(".mat-checkbox-input");
