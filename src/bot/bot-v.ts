@@ -30,7 +30,9 @@ export abstract class BotV {
     await sleep(1000);
   }
 
-  protected async login() {
+  abstract run(): Promise<void>;
+
+  private async login() {
     await this.page.goto(this.loginEndpoint);
     await this.page.waitForSelector("#onetrust-accept-btn-handler");
     await this.page.click("#onetrust-accept-btn-handler");
